@@ -76,7 +76,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <CardContent className="p-4">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-yellow-300" />
+                <Star className="w-5 h-5 text-yellow-300 animate-pulse" />
                 <span className="font-semibold">Level {level}</span>
               </div>
               <div className="text-sm">
@@ -88,6 +88,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 className="bg-white h-2 rounded-full transition-all duration-500" 
                 style={{ width: `${xpProgress}%` }}
               ></div>
+            </div>
+            <div className="flex items-center justify-between mt-3 text-sm">
+              <div className="flex items-center gap-1">
+                <Flame className="w-4 h-4 text-orange-300" />
+                <span>{streak} day streak</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <Trophy className="w-4 h-4 text-yellow-300" />
+                <span>4 badges</span>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -213,7 +223,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <Music className="w-4 h-4" />
               Study Mood
             </Button>
-            <Button variant="outline" size="sm" className="h-12 flex-col gap-1 text-xs">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="h-12 flex-col gap-1 text-xs hover:scale-105 transition-transform"
+              onClick={() => {
+                // Add brain games logic here - could open a modal or navigate
+                console.log('Opening Brain Games...');
+              }}
+            >
               <Gamepad2 className="w-4 h-4" />
               Brain Games
             </Button>

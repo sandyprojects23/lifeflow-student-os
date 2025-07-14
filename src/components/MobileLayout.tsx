@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Home, BookOpen, FileText, Timer, User } from 'lucide-react';
+import { Home, BookOpen, FileText, Timer, User, GraduationCap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface MobileLayoutProps {
@@ -13,6 +13,7 @@ const tabs = [
   { id: 'study', icon: BookOpen, label: 'Study', emoji: '📚' },
   { id: 'notes', icon: FileText, label: 'Notes', emoji: '📝' },
   { id: 'focus', icon: Timer, label: 'Focus', emoji: '⏳' },
+  { id: 'exam', icon: GraduationCap, label: 'Exam', emoji: '🎓' },
   { id: 'profile', icon: User, label: 'Profile', emoji: '👤' },
 ];
 

@@ -4,7 +4,9 @@ import { HomePage } from '@/components/pages/HomePage';
 import { StudyPage } from '@/components/pages/StudyPage';
 import { NotesPage } from '@/components/pages/NotesPage';
 import { FocusPage } from '@/components/pages/FocusPage';
+import { ExamPage } from '@/components/pages/ExamPage';
 import { ProfilePage } from '@/components/pages/ProfilePage';
+import { XPProvider } from '@/components/features/XPSystem';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('home');
@@ -19,6 +21,8 @@ const Index = () => {
         return <NotesPage />;
       case 'focus':
         return <FocusPage />;
+      case 'exam':
+        return <ExamPage />;
       case 'profile':
         return <ProfilePage />;
       default:
@@ -27,9 +31,11 @@ const Index = () => {
   };
 
   return (
-    <MobileLayout activeTab={activeTab} onTabChange={setActiveTab}>
-      {renderPage()}
-    </MobileLayout>
+    <XPProvider>
+      <MobileLayout activeTab={activeTab} onTabChange={setActiveTab}>
+        {renderPage()}
+      </MobileLayout>
+    </XPProvider>
   );
 };
 
